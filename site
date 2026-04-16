@@ -1,0 +1,20 @@
+from flask import Flask
+import random
+app = Flask(__name__)
+import random
+@app.route("/")
+def hello_world():
+    return ' <a href="/lista">Veja um fato aleatório!</a>'
+
+@app.route("/jhjh")
+def bababa():
+    return '<h1>123df!</h1>\n<h1>aer123<h1>'
+
+@app.route("/lista")
+def baba():
+    fatos= ['A bandeira nacional com mais cores é a de Belize (1981), com 12', 'A primeira chamada de telefone móvel foi feita em 3 de abril de 1973, em Nova York.', ' Buzz Aldrin (o segundo homem a pisar na Lua, em 1969) realmente urinou enquanto caminhava pela superfície, aparentemente.', 'No Egito Antigo, a palavra para “gato” era pronunciada como “mew” ou “miau”.', 'A Guerra Anglo-Zanzibar (1896) foi a guerra mais curta de todos os tempos – durou apenas 38 minutos!', ' A imprensa, que revolucionou o compartilhamento de informações, foi inventada por Gutenberg por volta de 1440.', 'O maior império de terras contíguas da história é o Império Mongol (séculos 13 e 14).', 'O Egito é classificado como o país mais antigo do mundo, datando de 3100 a.C.']
+    return f'o fato aleatorio e {random.choice(fatos)}\n<a href="/">pagina principal</a>'
+@app.route("/caraoucoroa") 
+def aer():
+    return random.choice(["Cara", "Coroa"])
+app.run(debug=True)
